@@ -42,16 +42,22 @@ macOS CI job (or an on-device session) verify it.
 
 Install these with `scripts/install-claude-tools.sh`.
 
-- **[XcodeBuildMCP](https://github.com/getsentry/XcodeBuildMCP)** — the
-  standard MCP server for driving `xcodebuild`, the simulator, and device
-  installs from an on-device Claude Code session. Use it whenever Claude
-  needs to build, run, or screenshot the app itself, rather than having it
-  guess at raw `xcodebuild` invocations.
+- **[MobileBuildMCP](https://github.com/getsentry/MobileBuildMCP)**
+  (renamed from XcodeBuildMCP in 2026 — same Sentry-maintained project,
+  npm package is now `mobilebuildmcp`; the old `xcodebuildmcp` package/repo
+  still exist but are frozen at v2.7.0) — the standard MCP server for
+  driving `xcodebuild`, the simulator, and device installs from an
+  on-device Claude Code session. Use it whenever Claude needs to build,
+  run, or screenshot the app itself, rather than having it guess at raw
+  `xcodebuild` invocations.
 - **[ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)**
   — a Claude Code skill specifically built to reduce token/context waste
   when proxying `xcodebuild` and simulator interaction, including handling
   slow GitHub Actions macOS runner boot times. Pairs well with
-  XcodeBuildMCP.
+  MobileBuildMCP. Now distributed as a plugin — install via
+  `/plugin marketplace add conorluddy/ios-simulator-skill` then
+  `/plugin install ios-simulator-skill@conorluddy` from Claude Code,
+  rather than cloning by hand.
 - **[vexp](https://vexp.dev)** — a local-first context engine (MCP, zero
   network calls, free for a single small repo). It indexes your codebase
   into a dependency graph and hands Claude compact "capsules" — full

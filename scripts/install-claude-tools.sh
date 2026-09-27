@@ -4,7 +4,7 @@
 # that isn't installed via `claude mcp add`.
 #
 # Run this ON-DEVICE (a Mac with Xcode installed and Claude Code's `claude`
-# CLI on PATH) — XcodeBuildMCP needs the real Xcode toolchain to be useful,
+# CLI on PATH) — MobileBuildMCP needs the real Xcode toolchain to be useful,
 # so running it from a cloud/Linux session has nothing to attach to.
 #
 # See docs/01-tool-stack-and-costs.md for what each of these does.
@@ -17,18 +17,25 @@ if ! command -v claude >/dev/null 2>&1; then
   exit 1
 fi
 
-echo "== Installing XcodeBuildMCP =="
-claude mcp add -s user XcodeBuildMCP npx xcodebuildmcp@latest \
+echo "== Installing MobileBuildMCP (formerly XcodeBuildMCP) =="
+# Package/repo were renamed in 2026 (getsentry/XcodeBuildMCP ->
+# getsentry/MobileBuildMCP, npm package xcodebuildmcp -> mobilebuildmcp).
+# The env vars below still used the XCODEBUILDMCP_ prefix as of the rename;
+# if this fails, check https://github.com/getsentry/MobileBuildMCP for the
+# current variable names.
+claude mcp add -s user MobileBuildMCP npx mobilebuildmcp@latest \
   -e INCREMENTAL_BUILDS_ENABLED=true \
   -e XCODEBUILDMCP_ENABLED_WORKFLOWS="simulator,device,project-discovery,session-management" \
   -e XCODEBUILDMCP_SENTRY_DISABLED=true
 
 echo ""
 echo "== ios-simulator-skill =="
-echo "This is a Claude Code *skill*, not an MCP server — clone it and point"
-echo "Claude Code at it manually (skill layout and install steps may change,"
-echo "check the repo's own README):"
-echo "  https://github.com/conorluddy/ios-simulator-skill"
+echo "Distributed as a Claude Code plugin — install from within Claude Code:"
+echo "  /plugin marketplace add conorluddy/ios-simulator-skill"
+echo "  /plugin install ios-simulator-skill@conorluddy"
+echo "(Manual clone still works if you'd rather not use the marketplace —"
+echo "see the repo's own README, layout may change:"
+echo "  https://github.com/conorluddy/ios-simulator-skill )"
 echo "Requires Xcode + Command Line Tools 26+ on this Mac (xcode-select --install)."
 
 echo ""
