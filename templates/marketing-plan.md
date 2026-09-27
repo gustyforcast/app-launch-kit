@@ -45,9 +45,15 @@ One sentence: who this is for, and the single biggest benefit.
 
 ## Expected return (write as a range, not a single number)
 
-- Floor case (most likely, per RevenueCat's median-app data):
-- Realistic case:
+Portfolio target is $3,000/month combined across all live apps within 6
+months of the first launch — treat that as a portfolio goal, not a bar
+this one app must clear alone (see `docs/06-bootstrap-ideology-and-tools.md`).
+
+- Floor case (most likely, per RevenueCat's median-app data — under
+  $50/month at 12 months for a typical subscription app):
+- Realistic case (Habit Pixel-style: ~$1,000 MRR by month 8, bootstrapped):
 - Upside case:
+- This app's contribution toward the $3K portfolio target:
 - Re-check against actual data at: 1 month / 3 months / 6 months
 
 ## Metrics to track from week 1

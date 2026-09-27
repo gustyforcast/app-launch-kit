@@ -38,6 +38,9 @@ install — it's a starting point you copy and adapt per app.
 | `docs/03-ci-testing.md` | GitHub Actions setup for Swift — logic tests on Linux, builds on macOS, kept cheap |
 | `docs/04-marketing-and-launch.md` | Launch checklist and channel priority for a near-zero marketing budget |
 | `docs/05-monetization-and-roadmap.md` | Revenue tooling, realistic benchmarks, portfolio strategy, roadmap cadence |
+| `docs/06-bootstrap-ideology-and-tools.md` | No-capital-in ideology, zero-cost tool stack, honest read on the $3K/6mo target |
+| `docs/07-scheduled-research.md` | What the recurring research task looks for and how it updates this kit |
+| `research/log.md` | Dated log the scheduled research task appends to |
 | `templates/` | Blank spec, plan, tasks, marketing-plan, roadmap, and an XcodeGen `project.yml` |
 | `scripts/new-project.sh` | Scaffolds a new app repo from the templates |
 | `scripts/setup-ci.sh` | Drops the CI workflows into an existing app repo |

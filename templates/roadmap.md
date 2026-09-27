@@ -7,6 +7,10 @@
 
 ## Review log
 
+Include any decision to spend against a specific bottleneck here (see
+`docs/06-bootstrap-ideology-and-tools.md` — reinvestment is always funded
+by this app's own prior earnings, never outside capital).
+
 | Date | What the data showed | Decision |
 |---|---|---|
 | | | |
