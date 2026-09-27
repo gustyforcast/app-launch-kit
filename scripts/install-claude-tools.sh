@@ -20,13 +20,15 @@ fi
 echo "== Installing MobileBuildMCP (formerly XcodeBuildMCP) =="
 # Package/repo were renamed in 2026 (getsentry/XcodeBuildMCP ->
 # getsentry/MobileBuildMCP, npm package xcodebuildmcp -> mobilebuildmcp).
-# The env vars below still used the XCODEBUILDMCP_ prefix as of the rename;
-# if this fails, check https://github.com/getsentry/MobileBuildMCP for the
-# current variable names.
+# The v2.7.1 rename release also renamed the env var prefix
+# (XCODEBUILDMCP_* -> MOBILEBUILDMCP_*), the state dir
+# (~/Library/Developer/XcodeBuildMCP -> .../MobileBuildMCP), and the project
+# config dir (.xcodebuildmcp/ -> .mobilebuildmcp/). Confirmed against the
+# v2.7.1 release notes: https://github.com/getsentry/MobileBuildMCP/releases/tag/v2.7.1
 claude mcp add -s user MobileBuildMCP npx mobilebuildmcp@latest \
   -e INCREMENTAL_BUILDS_ENABLED=true \
-  -e XCODEBUILDMCP_ENABLED_WORKFLOWS="simulator,device,project-discovery,session-management" \
-  -e XCODEBUILDMCP_SENTRY_DISABLED=true
+  -e MOBILEBUILDMCP_ENABLED_WORKFLOWS="simulator,device,project-discovery,session-management" \
+  -e MOBILEBUILDMCP_SENTRY_DISABLED=true
 
 echo ""
 echo "== ios-simulator-skill =="

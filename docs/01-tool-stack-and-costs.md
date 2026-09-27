@@ -49,7 +49,9 @@ Install these with `scripts/install-claude-tools.sh`.
   driving `xcodebuild`, the simulator, and device installs from an
   on-device Claude Code session. Use it whenever Claude needs to build,
   run, or screenshot the app itself, rather than having it guess at raw
-  `xcodebuild` invocations.
+  `xcodebuild` invocations. The v2.7.1 rename release also renamed the env
+  var prefix (`XCODEBUILDMCP_*` → `MOBILEBUILDMCP_*`) and the state/config
+  directories — `scripts/install-claude-tools.sh` uses the current names.
 - **[ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)**
   — a Claude Code skill specifically built to reduce token/context waste
   when proxying `xcodebuild` and simulator interaction, including handling
@@ -59,13 +61,18 @@ Install these with `scripts/install-claude-tools.sh`.
   `/plugin install ios-simulator-skill@conorluddy` from Claude Code,
   rather than cloning by hand.
 - **[vexp](https://vexp.dev)** — a local-first context engine (MCP, zero
-  network calls, free for a single small repo). It indexes your codebase
-  into a dependency graph and hands Claude compact "capsules" — full
-  source for the file that matters, skeleton signatures for everything
-  adjacent — instead of dumping whole files into context. Their own
-  numbers: ~74% token reduction on a sample query, and on SWE-bench Pro,
-  Opus + vexp matched a pricier model's results at roughly half the token
-  cost. Worth trying against any repo that's grown past a few files.
+  network calls). Now positioned as "the reliability layer for AI coding
+  agents" (context delivery plus mechanical verification of agent work),
+  but the free Starter tier is still what matters here: **≤2,000 nodes,
+  single-repo workspace, 20 pipeline+skeleton calls/day, no account
+  required.** It indexes your codebase into a dependency graph and hands
+  Claude compact "capsules" — full source for the file that matters,
+  skeleton signatures for everything adjacent — instead of dumping whole
+  files into context. Their own numbers: ~74% token reduction on a sample
+  query, and on SWE-bench Pro, Opus + vexp matched a pricier model's
+  results at roughly half the token cost. Worth trying against any repo
+  that's grown past a few files; a small app repo should comfortably fit
+  the free tier's node ceiling.
 
 ## General token-management habits
 
