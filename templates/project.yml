@@ -1,0 +1,53 @@
+# XcodeGen project spec — generates the .xcodeproj from this file instead
+# of hand-editing it (or fighting merge conflicts on the binary-ish pbxproj
+# format). Run `xcodegen generate` on-device (needs Xcode command line
+# tools) after cloning, or as a CI step before build.
+#
+# Install: brew install xcodegen
+# Docs: https://github.com/yonaskolb/XcodeGen
+#
+# Fill in __APP_NAME__ and adjust targets/platform as needed — this is a
+# minimal single-app iOS starting point, not a full multiplatform setup.
+
+name: __APP_NAME__
+options:
+  bundleIdPrefix: com.gustyforcast
+  deploymentTarget:
+    iOS: "17.0"
+
+packages:
+  YourNameKit:
+    path: ../YourNameKit   # adjust or remove if this app doesn't use the shared kit yet
+
+targets:
+  __APP_NAME__:
+    type: application
+    platform: iOS
+    sources:
+      - Sources/__APP_NAME__
+    dependencies:
+      - package: YourNameKit
+    settings:
+      base:
+        SWIFT_VERSION: "6.0"
+        DEVELOPMENT_TEAM: "" # fill in your Apple Developer Team ID
+        PRODUCT_BUNDLE_IDENTIFIER: com.gustyforcast.__APP_NAME_LOWER__
+
+  __APP_NAME__Tests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - Tests/__APP_NAME__Tests
+    dependencies:
+      - target: __APP_NAME__
+
+schemes:
+  __APP_NAME__:
+    build:
+      targets:
+        __APP_NAME__: all
+    test:
+      targets:
+        - __APP_NAME__Tests
+    run:
+      config: Debug
