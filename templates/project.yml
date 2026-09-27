@@ -8,16 +8,21 @@
 #
 # Fill in __APP_NAME__ and adjust targets/platform as needed — this is a
 # minimal single-app iOS starting point, not a full multiplatform setup.
+# bundleIdPrefix matches StillTime's existing com.timdeacon.* identifiers
+# (see docs/02-design-system-guide.md) — adjust here if that ever changes.
 
 name: __APP_NAME__
 options:
-  bundleIdPrefix: com.gustyforcast
+  bundleIdPrefix: com.timdeacon
   deploymentTarget:
     iOS: "17.0"
 
 packages:
-  YourNameKit:
-    path: ../YourNameKit   # adjust or remove if this app doesn't use the shared kit yet
+  TimDeaconKit:
+    url: https://github.com/gustyforcast/TimDeaconKit
+    branch: main
+    # Swap the two lines above for a local path during active TimDeaconKit
+    # development: `path: ../TimDeaconKit`
 
 targets:
   __APP_NAME__:
@@ -26,12 +31,12 @@ targets:
     sources:
       - Sources/__APP_NAME__
     dependencies:
-      - package: YourNameKit
+      - package: TimDeaconKit
     settings:
       base:
         SWIFT_VERSION: "6.0"
         DEVELOPMENT_TEAM: "" # fill in your Apple Developer Team ID
-        PRODUCT_BUNDLE_IDENTIFIER: com.gustyforcast.__APP_NAME_LOWER__
+        PRODUCT_BUNDLE_IDENTIFIER: com.timdeacon.__APP_NAME_LOWER__
 
   __APP_NAME__Tests:
     type: bundle.unit-test

@@ -17,7 +17,7 @@ What this app explicitly will *not* do, even if related or tempting.
 
 What should make this app feel unmistakably yours? Reference specific
 apps/screens/interactions you're drawing from, and specific pieces of
-`YourNameKit` (see `docs/02-design-system-guide.md`) this will reuse vs.
+`TimDeaconKit` (see `docs/02-design-system-guide.md`) this will reuse vs.
 extend.
 
 ## Core user stories

@@ -24,5 +24,5 @@ Platform: <PLATFORM>. Built from
   because it compiles locally in your head.
 - If you're about to write a UI component that feels like it belongs in
   every app, not just this one, say so — it probably belongs in the
-  shared design-system package (`YourNameKit`), not here.
+  shared design-system package (`TimDeaconKit`), not here.
 - Keep this file short. Point at `docs/`, don't duplicate it here.

@@ -63,7 +63,7 @@ pre-emptively.
 | Analytics | App Store Connect's own analytics (free, built-in) + PostHog free tier | 1M events/mo on PostHog | Appfigures (paid, cross-app dashboard) once running 2+ apps |
 | ASO / keyword research | [AppFollow's free ASO tools](https://appfollow.io/free-aso-tools), [ASOMobile's free tools](https://asomobile.net/en/free-tools/), [AwesomeASO](https://www.awesomeaso.com/) (built for indies specifically) | Most cap history depth / competitor count | Sensor Tower / Mobile Action once keyword strategy needs deeper competitor data |
 | Paid acquisition | **None, by design, until organic + ASO plateau** | — | Apple Search Ads (self-serve, pay-per-tap — the only paid channel worth testing early, funded from revenue, small daily cap) |
-| Design assets | SF Symbols (free, Apple's own), your own `YourNameKit` design system | — | Stock asset libraries only if a specific app genuinely needs them |
+| Design assets | SF Symbols (free, Apple's own), your own `TimDeaconKit` design system | — | Stock asset libraries only if a specific app genuinely needs them |
 | Landing page | A GitHub Pages / Cloudflare Pages static page (both free) | Bandwidth limits rarely hit at this scale | — |
 | Email (waitlist/updates) | Loops or Resend free tier (3K–10K contacts/emails) | Listed limits | Paid tier once list is actually that big |
 

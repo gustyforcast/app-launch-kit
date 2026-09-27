@@ -9,9 +9,9 @@ High-level module breakdown (views, view models, data layer, sync layer).
 
 ## Design system usage
 
-- Reused as-is from `YourNameKit`:
+- Reused as-is from `TimDeaconKit`:
 - New components needed for this app:
-- Anything built here that should probably move *into* `YourNameKit` later:
+- Anything built here that should probably move *into* `TimDeaconKit` later:
 
 ## Data model
 

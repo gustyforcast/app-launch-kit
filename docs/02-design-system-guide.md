@@ -11,8 +11,11 @@ know what you actually reuse).
    card layout, a color ramp, a haptic pattern, an onboarding flow shape),
    notice what you're duplicating verbatim.
 3. **Extract, don't design.** Pull the duplicated pieces into a Swift
-   Package — call it `<YourName>Kit` — the first time you're about to
-   copy-paste the same SwiftUI view or modifier a second time.
+   Package the first time you're about to copy-paste the same SwiftUI
+   view or modifier a second time. This is exactly how
+   [TimDeaconKit](https://github.com/gustyforcast/TimDeaconKit) started —
+   extracted from StillTime's card style, spacing grid, and haptics after
+   the fact, not designed before StillTime shipped.
 4. **Keep the split clean going forward**: the shared package owns
    mechanism (color composition, light/dark adaptation, spacing/type
    scale as tokens, platform bridging for iOS/macOS differences); each
@@ -28,14 +31,14 @@ and [dskit-swiftui](https://github.com/imodeveloper/dskit-swiftui) for two
 real examples of this pattern):
 
 ```
-YourNameKit/                     ← Swift Package, one product module
-  Sources/YourNameKit/
+TimDeaconKit/                     ← Swift Package, one product module
+  Sources/TimDeaconKit/
     Tokens/                      ← spacing, radius, type scale, motion durations
     Color/                       ← color composition + light/dark adaptation
     Components/                  ← buttons, cards, sheets, nav chrome — the
                                     "distinctive feel" primitives
     Platform/                    ← iOS/macOS bridging where SwiftUI diverges
-  Sources/YourNameKitTestSupport/ ← public test-only helpers
+  Sources/TimDeaconKitTestSupport/ ← public test-only helpers
   Tests/
 ```
 
@@ -58,7 +61,7 @@ This becomes:
 
 ## What "copy large sections of different apps" looks like in practice
 
-Once `YourNameKit` exists, a new app's first build session should:
+Once `TimDeaconKit` exists, a new app's first build session should:
 
 1. Read the Explorer catalog to see what already exists.
 2. Compose the new screen almost entirely from existing components.
