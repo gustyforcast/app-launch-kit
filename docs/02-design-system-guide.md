@@ -8,6 +8,12 @@ literature actually work confirms it's the dominant pattern, not a
 corner being cut. See `research/design-principles-report.md` for the full,
 sourced writeup this section is drawn from.
 
+**The decided aesthetic** (surface, color discipline, type discipline)
+lives in `docs/09-visual-direction.md` — read that before extracting or
+building any new component in `TimDeaconKit`. This doc is about
+*sequencing and structure*; `docs/09` is about *what it should look
+like*.
+
 ## Sequencing
 
 1. **Build app #1 with no shared package.** Just ship it.
