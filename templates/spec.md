@@ -15,10 +15,23 @@ What this app explicitly will *not* do, even if related or tempting.
 
 ## Distinctive feel
 
-What should make this app feel unmistakably yours? Reference specific
-apps/screens/interactions you're drawing from, and specific pieces of
-`TimDeaconKit` (see `docs/02-design-system-guide.md`) this will reuse vs.
-extend.
+The shared conventions are already decided — see
+`docs/09-visual-direction.md` — and apply here without re-litigating:
+glass surface (`TimDeaconKit`'s `.glassCard()`), one accent color per
+app (via the standard Xcode "AccentColor" asset, not a hardcoded
+value), monospace/tabular numerals reserved for data readouts only
+(`Font.dataReadout` — never for labels or headings).
+
+What's specific to *this* app:
+
+- **This app's one hook** — the single structural idea everything else
+  serves (StillTime's is the breathing focus ring). Name it here before
+  writing anything else in this doc.
+- **This app's accent color** — the one hex value, and why it fits the
+  hook/content (not picked for its own sake).
+- Reference specific apps/screens/interactions you're drawing from
+  beyond the shared direction, and specific pieces of `TimDeaconKit`
+  (see `docs/02-design-system-guide.md`) this will reuse vs. extend.
 
 ## Core user stories
 

@@ -13,6 +13,20 @@ High-level module breakdown (views, view models, data layer, sync layer).
 - New components needed for this app:
 - Anything built here that should probably move *into* `TimDeaconKit` later:
 
+Checklist against `docs/09-visual-direction.md` (the app-wide settled
+conventions — flag here, don't silently skip, if a screen needs an
+exception):
+
+- [ ] Cards/panels use `.glassCard()`, not a bespoke background/shadow
+- [ ] Exactly one accent color, defined once as the project's
+      "AccentColor" asset, referenced via `.tint`/`Color.accentColor`
+      — not hardcoded per-view
+- [ ] Monospace/tabular numerals (`Font.dataReadout`) used only for
+      data readouts (timers, counts, amounts) — never for labels,
+      headings, or body text
+- [ ] This app's "one hook" (named in `spec.md`) is identifiable in
+      the actual layout, not just described in prose
+
 ## Data model
 
 Core entities and relationships. Local storage choice (SwiftData / Core
