@@ -178,4 +178,92 @@ one over the other.
 
 ---
 
+## 2026-10-04
+
+Rotated focus this run toward the bootstrap tool-stack side of `docs/06`
+(analytics/error-monitoring/email free tiers, ASO tool links, Apple
+Search Ads) plus a fresh case-study search, since the last two passes
+already covered MobileBuildMCP/vexp/RevenueCat/GitHub Actions pricing in
+depth.
+
+**Changed `docs/06-bootstrap-ideology-and-tools.md`:**
+
+- **Loops' free tier is narrower than the doc implied, Resend's has no
+  contact cap.** The old row said "Loops or Resend free tier (3K–10K
+  contacts/emails)" as if both tools had roughly the same ceiling. Current
+  numbers straight from each pricing page: **Loops free plan** is capped
+  at **1,000 subscribed contacts** and **4,000 emails per rolling 30
+  days** (to your 1,000 newest contacts) — well under the "3K–10K" the
+  old wording suggested. **Resend free plan** is **3,000 emails/month
+  (100/day), 3 domains**, with no stated contact limit at all. Rewrote
+  the row to give each tool's actual numbers instead of one blended
+  range, so a reader doesn't assume Loops has more room than it does.
+  Sources: [Loops pricing](https://loops.so/pricing), [Resend
+  pricing](https://resend.com/pricing).
+
+**Checked, no change needed** (docs already current):
+
+- **Sentry free tier**: still **5K errors/month** on the Developer plan
+  (re-confirmed directly from sentry.io/pricing after an initial
+  mis-read of a different docs page suggested 50K — the pricing page
+  itself is unambiguous: 5k). Matches `docs/06`.
+- **PostHog free tier**: still **1M events/month** for product analytics
+  (plus separate free allowances for session replay, error tracking,
+  etc., unchanged from what's assumed here). Matches `docs/06`. Source:
+  [posthog.com/pricing](https://posthog.com/pricing).
+- **GitHub Actions pricing**: re-confirmed the same Jan 1, 2026
+  hosted-runner price cut (up to 39%, macOS landing at ~$0.062/min) and
+  the still-postponed self-hosted-runner platform fee already logged on
+  2026-09-27 (second pass) — a December 2025 GitHub changelog post about
+  "simpler pricing" turned out to be the same announcement, not a new
+  one. No further change. Source: [GitHub Changelog, Dec 16,
+  2025](https://github.blog/changelog/2025-12-16-coming-soon-simpler-pricing-and-a-better-experience-for-github-actions/).
+- **RevenueCat free tier**: no evidence found of a change to the
+  $2,500-tracked-MTR-then-1% terms reconfirmed last run. Search results
+  were all third-party pricing-aggregator pages, nothing from RevenueCat
+  itself suggesting a change.
+- **Apple Search Ads**: Apple is adding more inline ad placements within
+  App Store search results through 2026, but per Apple's own guidance
+  (via AppleInsider) this doesn't change the self-serve, pay-per-tap
+  billing model or add a pricing floor — relevance still gates whether an
+  ad shows regardless of bid. Doesn't affect the guidance in `docs/06`.
+  Source: [AppleInsider, Dec 18,
+  2025](https://appleinsider.com/articles/25/12/18/more-ads-are-coming-to-the-app-store-in-2026).
+- **ASO free-tool links**: all three links in `docs/06`'s ASO row
+  (AppFollow, ASOMobile, AwesomeASO) are still live and still describe
+  free tools, no credit card required. No dead links.
+- **MobileBuildMCP**: still pinned at v2.7.1 across several dependent
+  repos' lockfiles/configs found this run — no new release since the
+  rename logged on 2026-09-27.
+- **ios-simulator-skill**: no news or changelog entries found suggesting
+  a change beyond the plugin-marketplace install already documented in
+  `docs/01`. (GitHub's releases page didn't render cleanly for this
+  fetch, so this is a weaker check than the others above — worth a
+  closer look next time a "Claude Code MCP ecosystem" rotation comes
+  around.)
+
+**Case studies — searched, nothing added:**
+
+Looked specifically for iOS/macOS case studies this run (last run's three
+near-misses were a web SaaS, a web+extension, and a years-long portfolio).
+Nothing found clears the `docs/07` bar:
+
+- **Leadverse** (Jakub Mužík, $3,300 MRR in 10 months) — real, named,
+  sourced, but web-based SaaS, not iOS/macOS, and 10 months not ~6.
+  ([Indie Hackers](https://www.indiehackers.com/post/tech/launching-countless-apps-until-one-gained-momentum-and-hit-3-3-k-mrr-U9btJ44RYRcAaukCqHoj))
+- **Flighty** (Ryan Jones) and **Widgetsmith** (David Smith) came up
+  again in a roundup — both real, named, iOS, bootstrapped, but neither
+  is a 6-month story: Jones had a decade of shipping iOS apps first,
+  Smith's app was his 59th over 12 years. Useful as "what compounds over
+  years" examples, not as this doc's 6-month anchor.
+- A "Claude Code solo founder, $20K MRR Mac app in 6 months" piece
+  (WayToClawEarn) looked promising but fails the real-source guardrail on
+  inspection: pseudonymous founder ("MacMaker"), no named app, explicitly
+  "AI-assisted drafting" of a secondary aggregation — not citing it.
+- Everything else was the same SEO-aggregator "how I hit $10K MRR"
+  pattern already skipped in prior runs — no named founder or
+  independently verifiable numbers.
+
+---
+
 <!-- New entries are added above this line, newest first. -->

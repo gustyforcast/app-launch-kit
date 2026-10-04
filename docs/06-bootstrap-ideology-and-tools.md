@@ -65,7 +65,7 @@ pre-emptively.
 | Paid acquisition | **None, by design, until organic + ASO plateau** | — | Apple Search Ads (self-serve, pay-per-tap — the only paid channel worth testing early, funded from revenue, small daily cap) |
 | Design assets | SF Symbols (free, Apple's own), your own `TimDeaconKit` design system | — | Stock asset libraries only if a specific app genuinely needs them |
 | Landing page | A GitHub Pages / Cloudflare Pages static page (both free) | Bandwidth limits rarely hit at this scale | — |
-| Email (waitlist/updates) | Loops or Resend free tier (3K–10K contacts/emails) | Listed limits | Paid tier once list is actually that big |
+| Email (waitlist/updates) | Loops free tier (1K contacts, 4K emails/mo) or Resend free tier (3K emails/mo, 100/day, 3 domains, no contact cap) | Listed limits | Paid tier once list is actually that big |
 
 ## What "financial decisions to improve performance" should mean in practice
 
