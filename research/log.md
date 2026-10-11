@@ -266,4 +266,96 @@ Nothing found clears the `docs/07` bar:
 
 ---
 
+## 2026-10-11
+
+Rotated focus this run toward the Claude Code / MCP ecosystem side of
+`docs/01-tool-stack-and-costs.md` (MobileBuildMCP, ios-simulator-skill,
+vexp), since the last two runs covered `docs/06`'s bootstrap tool stack
+and case studies in depth. Also re-checked the Apple/GitHub/RevenueCat
+policy watch areas and did a lighter case-study pass to stay honest about
+not skipping an angle entirely.
+
+**Note on method this run:** `WebFetch` could not reach any target site
+this run (every call failed with a stalled provenance/permission
+prompt — consistent with running unattended on a schedule, with nobody
+available to approve it). Everything below is from `WebSearch` results
+only; where that wasn't enough to confirm a number with confidence, it's
+called out rather than guessed.
+
+**Changed `docs/01-tool-stack-and-costs.md`:**
+
+- **ios-simulator-skill is now at v1.5.0**, up from unversioned at the
+  time it was first logged (2026-09-27). The release adds **Xcode 27
+  support, which needs `idb-companion` 1.5.1+** — added a one-line note
+  so a simulator build failing after an Xcode 27 upgrade has an obvious
+  first thing to check. Confirmed via a third-party Nix packaging bot's
+  PR explicitly tracking `conorluddy.ios-simulator-skill` at 1.5.0
+  ([sudosubin/agents.nix
+  PR#35076](https://github.com/sudosubin/agents.nix/pull/35076)) rather
+  than relying on the release notes alone, since a same-titled v1.5.0
+  release also shows up on a GitHub fork (`Adam-s-tech/ios-simulator-skill`)
+  that search results surface just as readily — that fork looks like an
+  ordinary fork of conorluddy's repo (listed under its "forks" tab on at
+  least one skill-index site), not a competing rewrite, so it isn't
+  something to switch this doc to, but it's worth knowing it exists if a
+  future search turns up confusing version numbers again.
+
+**Checked, no change needed** (docs already current):
+
+- **MobileBuildMCP**: still pinned at v2.7.1 — confirmed again via the
+  GitHub releases tag page and a run of recent PRs against the repo,
+  which are all `dependabot` dependency bumps (ip-address, smol-toml,
+  hono, fast-uri), nothing functional. Third run in a row finding no
+  version change. Source: [getsentry/MobileBuildMCP
+  v2.7.1](https://github.com/getsentry/MobileBuildMCP/releases/tag/v2.7.1).
+- **GitHub Actions self-hosted-runner fee**: re-confirmed still shelved,
+  not just "postponed" in limbo — two independent writeups
+  ([bex.co, Jul 8](https://bex.co/blog/2026/07/08/github-actions-runner-metering-backoff)
+  and [bex.co, Sep 19](https://bex.co/blog/2026/09/19/github-self-hosted-runner-charge-reversal))
+  describe GitHub backing off the proposed $0.002/min self-hosted charge
+  entirely after the March 2026 target date came and went. Matches what's
+  already in `docs/01`/`docs/06` (nothing to revert, since it was never
+  added).
+- **RevenueCat free tier**: still free up to $2,500 tracked MTR, then 1%,
+  per multiple independent 2026 pricing trackers. Matches `docs/06`. A
+  RevenueCat blog post titled "Navigating RevenueCat's new pricing for
+  existing users" turned up in search, but without `WebFetch` access to
+  check its publish date, I can't tell if it's the original
+  announcement of this same model or something newer — flagged for next
+  run to open directly rather than treated as a fresh change on an
+  unverified title.
+- **Apple Developer Program fee**: no evidence of a change from $99/year;
+  search results were all generic "how much does an app cost" explainer
+  content, nothing from Apple itself suggesting otherwise.
+- **App Store Review Guidelines**: no update found beyond the June 8,
+  2026 low-quality-app crackdown already logged two runs ago. Search
+  results kept resurfacing that same announcement (and, oddly, a 2020
+  guidelines story) rather than anything newer.
+
+**Checked, inconclusive — flagged rather than guessed:**
+
+- **vexp pricing**: AppSumo is now running a "$49 once vs $228/yr"
+  lifetime-deal listing for vexp
+  ([appsumo.com/products/vexp](https://appsumo.com/products/vexp/)),
+  which implies a paid annual plan exists alongside whatever free tier
+  remains, but search snippets didn't surface the free "Starter" tier's
+  actual node/call limits clearly enough to confirm whether the
+  "≤2,000 nodes, single-repo, 20 pipeline+skeleton calls/day" figures in
+  `docs/01` are still accurate or have moved. Not editing the doc on this
+  — worth a direct look at vexp.dev/pricing next run (or whenever
+  `WebFetch` is working in an attended session) before touching those
+  numbers.
+
+**Case studies — light pass, nothing added:**
+
+Didn't do a full case-study search this run (two prior runs already
+covered it in depth with nothing clearing the bar), but one new lead
+("Hitting $125k MRR as a solo founder" on Indie Hackers) surfaced in
+passing. Couldn't confirm platform or timeline from search snippets
+alone, and it reads like a SaaS story rather than an App Store app, so
+not citing it. No full search for a 6-month iOS/macOS case study this
+run — due for one again next time this angle comes up in rotation.
+
+---
+
 <!-- New entries are added above this line, newest first. -->

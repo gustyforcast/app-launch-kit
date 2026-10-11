@@ -59,7 +59,9 @@ Install these with `scripts/install-claude-tools.sh`.
   MobileBuildMCP. Now distributed as a plugin — install via
   `/plugin marketplace add conorluddy/ios-simulator-skill` then
   `/plugin install ios-simulator-skill@conorluddy` from Claude Code,
-  rather than cloning by hand.
+  rather than cloning by hand. Up to v1.5.0 as of October 2026, which adds
+  Xcode 27 support (needs `idb-companion` 1.5.1+) — bump your idb-companion
+  install if a simulator build on Xcode 27 starts failing.
 - **[vexp](https://vexp.dev)** — a local-first context engine (MCP, zero
   network calls). Now positioned as "the reliability layer for AI coding
   agents" (context delivery plus mechanical verification of agent work),
